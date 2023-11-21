@@ -30,6 +30,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>shipping-service-example</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
