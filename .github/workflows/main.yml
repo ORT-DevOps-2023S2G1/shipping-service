@@ -14,12 +14,12 @@ jobs:
   build_test_release:
 
     name: Build Test and Release - Call reusable workflow
-    uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/main.yml@main
+    uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/main.yml@gonza-test
     secrets: inherit
 
   deploy:
     needs: build_test_release
 
     name: Deploy on DEV Environment - Call reusable workflow
-    uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/deploy.yml@main
+    uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/deploy.yml@gonza-test
     secrets: inherit
