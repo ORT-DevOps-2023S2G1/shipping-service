@@ -1,25 +1,22 @@
-name: Shipping service CI 
+name: Shipping service CICD 
 
 on:
-  push:
+  pull_request:
     branches:
       - main
   
-  # Allow workflow to be triggered manually
   workflow_dispatch:
   
 permissions: write-all
 
 jobs:
   build_test_release:
-
-    name: Build Test and Release - Call reusable workflow
+    name: Build Test and Release
     uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/main.yml@feature/deploy
     secrets: inherit
 
   deploy:
     needs: build_test_release
-
-    name: Deploy on DEV Environment - Call reusable workflow
+    name: Deploy
     uses: ORT-DevOps-2023S2G1/workflows-repository/.github/workflows/deploy.yml@feature/deploy
     secrets: inherit
